@@ -1,0 +1,164 @@
+﻿@model COMICSHOP.Areas.Admin.Data.CTDHDisplayVM
+
+@{
+    ViewBag.Title = "ChiTietDonHang";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Chi Tiết Đơn Hàng</h2>
+
+<div class="container mt-4">
+    <h4>Thông Tin Người Đặt</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.TenKhach)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.TenKhach)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.SoDienThoai)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.SoDienThoai)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.TongTien)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.TongTien)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.NgayDat)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.NgayDat)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.TrangThai)
+        </dt>
+        <dd class="col-sm-9">
+            @if (@Model.TrangThai == 0)
+            {
+                <span class="badge bg-secondary">Chờ xác nhận</span>
+            }
+            else if (@Model.TrangThai == 1)
+            {
+                <span class="badge bg-primary">Đã xác nhận</span>
+            }
+            else if (@Model.TrangThai == 2)
+            {
+                <span class="badge bg-info">Hàng đang chuẩn bị</span>
+            }
+            else if (@Model.TrangThai == 3)
+            {
+                <span class="badge bg-warning">Đang giao hàng</span>
+            }
+            else
+            {
+                <span class="badge bg-success">Giao hàng thành công</span>
+            }
+        </dd>
+    </dl>
+</div>
+
+<h4>Danh Sách Sản Phẩm</h4>
+<div class="container mt-4">
+    <hr />
+    <dl class="row">
+        @foreach (var item in Model.SanPhams)
+        {
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => item.TenTruyen)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => item.TenTruyen)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => item.HinhAnh)
+            </dt>
+            <dd class="col-sm-9">
+                <img src="~/Images/@item.HinhAnh" class="img-thumbnail" style="height:60px" />
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => item.SoLuongMua)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => item.SoLuongMua)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => item.DonGia)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => item.DonGia)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => item.ThanhTien)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => item.ThanhTien)
+            </dd>
+}
+    </dl>
+</div>
+
+<p class="container mt-4">
+    @using (Html.BeginForm("ChuyenTrangThai", "QLDonHang", FormMethod.Post, new { @class = "row g-3" }))
+    {
+        @Html.HiddenFor(model => model.IdDonHang)
+        <div class="col-auto">
+            @Html.DropDownListFor(model => model.TrangThai, (SelectList)ViewBag.TrangThaiParam, new { @class = "form-select", id = "trangThaiDropdown" })
+        </div>
+        <div class="col-auto">
+            <input type="submit" value="Cập nhật" class="btn btn-outline-primary" id="capNhatBtn" />
+        </div>
+    }
+    <a href="@Url.Action("Index")" class="btn btn-secondary mt-3">Back to List</a>
+</p>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var trangThaiDropdown = document.getElementById("trangThaiDropdown");
+        var capNhatBtn = document.getElementById("capNhatBtn");
+
+        // Lấy giá trị trạng thái hiện tại từ model
+        var trangThaiHienTai = '@Model.TrangThai';
+
+        // Nếu trạng thái là 4, ẩn dropdown list và nút cập nhật
+        if (trangThaiHienTai === "4") {
+            trangThaiDropdown.style.display = "none";
+            capNhatBtn.style.display = "none";
+        } else {
+            // Hiển thị chỉ giá trị tiếp theo và ẩn các giá trị khác
+            var options = trangThaiDropdown.options;
+            var nextValue = (parseInt(trangThaiHienTai) + 1).toString();
+
+            for (var i = 0; i < options.length; i++) {
+                if (options[i].value === nextValue) {
+                    options[i].style.display = ""; // Hiển thị giá trị tiếp theo
+                } else {
+                    options[i].style.display = "none"; // Ẩn các giá trị khác
+                }
+            }
+
+            // Đặt giá trị dropdown list thành giá trị tiếp theo
+            trangThaiDropdown.value = nextValue;
+        }
+    });
+</script>

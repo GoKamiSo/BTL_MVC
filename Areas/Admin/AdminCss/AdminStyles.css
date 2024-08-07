@@ -1,0 +1,61 @@
+﻿body {
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.sidebar {
+    height: 100vh;
+    padding-top: 1rem;
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+    .sidebar .nav-link {
+        color: #ffffff;
+    }
+
+        .sidebar .nav-link.active {
+            background-color: #495057;
+            color: #ffffff;
+        }
+
+        .sidebar .nav-link:hover {
+            background-color: #495057;
+        }
+
+.main-content {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.nav-item .feather {
+    margin-right: 0.5rem;
+}
+
+.btn-toolbar .btn {
+    margin-left: 0.5rem;
+}
+
+/* site.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+    color: #007bff;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.btn {
+    margin-right: 10px;
+}
+
+.text-danger {
+    color: #dc3545;
+}
+

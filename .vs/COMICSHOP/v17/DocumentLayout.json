@@ -1,0 +1,199 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\views\\shared\\_layoutuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|solutionrelative:views\\shared\\_layoutuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\views\\trangchu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|solutionrelative:views\\trangchu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|c:\\users\\seele\\onedrive\\desktop\\comicshop\\controllers\\trangchucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|solutionrelative:controllers\\trangchucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\areas\\admin\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|solutionrelative:areas\\admin\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\areas\\admin\\controllers\\qltruyencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|solutionrelative:areas\\admin\\controllers\\qltruyencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\views\\taikhoan\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|solutionrelative:views\\taikhoan\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\controllers\\truyencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|solutionrelative:controllers\\truyencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\views\\truyen\\chitietsp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|solutionrelative:views\\truyen\\chitietsp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\views\\truyen\\sptt.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|solutionrelative:views\\truyen\\sptt.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\areas\\admin\\views\\qltruyen\\danhsach.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|solutionrelative:areas\\admin\\views\\qltruyen\\danhsach.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\areas\\admin\\data\\truyendisplayvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F96EAECC-9C93-43C5-989C-7DA9866A71A6}|COMICSHOP.csproj|solutionrelative:areas\\admin\\data\\truyendisplayvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TrangchuController.cs",
+              "DocumentMoniker": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Controllers\\TrangchuController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TrangchuController.cs",
+              "ToolTip": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Controllers\\TrangchuController.cs",
+              "RelativeToolTip": "Controllers\\TrangchuController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD0AAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T02:26:33.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Views\\Trangchu\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Trangchu\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Views\\Trangchu\\Index.cshtml",
+              "RelativeToolTip": "Views\\Trangchu\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-07T01:23:05.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ChitietSP.cshtml",
+              "DocumentMoniker": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Views\\Truyen\\ChitietSP.cshtml",
+              "RelativeDocumentMoniker": "Views\\Truyen\\ChitietSP.cshtml",
+              "ToolTip": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Views\\Truyen\\ChitietSP.cshtml",
+              "RelativeToolTip": "Views\\Truyen\\ChitietSP.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-07T01:27:32.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TruyenDisplayVM.cs",
+              "DocumentMoniker": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Areas\\Admin\\Data\\TruyenDisplayVM.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Data\\TruyenDisplayVM.cs",
+              "ToolTip": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Areas\\Admin\\Data\\TruyenDisplayVM.cs",
+              "RelativeToolTip": "Areas\\Admin\\Data\\TruyenDisplayVM.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T01:21:23.763Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "QLTruyenController.cs",
+              "DocumentMoniker": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Areas\\Admin\\Controllers\\QLTruyenController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\QLTruyenController.cs",
+              "ToolTip": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Areas\\Admin\\Controllers\\QLTruyenController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\QLTruyenController.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAiwDoAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T01:21:18.276Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-07T02:00:41.772Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_LayoutUser.cshtml",
+              "DocumentMoniker": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Views\\Shared\\_LayoutUser.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_LayoutUser.cshtml",
+              "ToolTip": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Views\\Shared\\_LayoutUser.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_LayoutUser.cshtml",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAEsAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-07T01:37:31.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SPTT.cshtml",
+              "DocumentMoniker": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Views\\Truyen\\SPTT.cshtml",
+              "RelativeDocumentMoniker": "Views\\Truyen\\SPTT.cshtml",
+              "ToolTip": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Views\\Truyen\\SPTT.cshtml",
+              "RelativeToolTip": "Views\\Truyen\\SPTT.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-07T01:27:41.375Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TruyenController.cs",
+              "DocumentMoniker": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Controllers\\TruyenController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TruyenController.cs",
+              "ToolTip": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Controllers\\TruyenController.cs",
+              "RelativeToolTip": "Controllers\\TruyenController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABcAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T01:28:04.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Views\\TaiKhoan\\Register.cshtml",
+              "RelativeDocumentMoniker": "Views\\TaiKhoan\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Views\\TaiKhoan\\Register.cshtml",
+              "RelativeToolTip": "Views\\TaiKhoan\\Register.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-07T01:51:57.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DanhSach.cshtml",
+              "DocumentMoniker": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Areas\\Admin\\Views\\QLTruyen\\DanhSach.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\QLTruyen\\DanhSach.cshtml",
+              "ToolTip": "C:\\Users\\Seele\\OneDrive\\Desktop\\COMICSHOP\\Areas\\Admin\\Views\\QLTruyen\\DanhSach.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\QLTruyen\\DanhSach.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAAC8AAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-06T19:45:29.571Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

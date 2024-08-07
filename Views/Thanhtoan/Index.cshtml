@@ -1,0 +1,84 @@
+﻿@model COMICSHOP.Models.ViewModel.Thanhtoan
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    var tenKhach = Session["Fullname"] != null ? Session["Fullname"].ToString() : "";
+    var soDienThoai = Session["sdt"] != null ? Session["sdt"] : "";
+}
+
+<h2>Thanh toán</h2>
+<div style="min-height:600px; height:auto">
+    @using (Html.BeginForm("Themdonhang", "Thanhtoan", FormMethod.Post, new { @class = "needs-validation", novalidate = "novalidate" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="mb-4">
+            <h4>Đơn hàng</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                @Html.LabelFor(model => model.Donhang.TenKhach, new { @class = "form-label" })
+                @Html.EditorFor(model => model.Donhang.TenKhach, new { htmlAttributes = new { @class = "form-control", required = "required", @Value = tenKhach } })
+                @Html.ValidationMessageFor(model => model.Donhang.TenKhach, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-4 mb-3">
+                @Html.LabelFor(model => model.Donhang.SoDienThoai, new { @class = "form-label" })
+                @Html.EditorFor(model => model.Donhang.SoDienThoai, new { htmlAttributes = new { @class = "form-control", required = "required", @Value = soDienThoai } })
+                @Html.ValidationMessageFor(model => model.Donhang.SoDienThoai, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-4 mb-3">
+                @Html.LabelFor(model => model.Donhang.DiaChi, new { @class = "form-label" })
+                @Html.EditorFor(model => model.Donhang.DiaChi, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                @Html.ValidationMessageFor(model => model.Donhang.DiaChi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+            @* GioHang Fields *@
+            <div class="mb-3">
+                <label class="form-label">Danh sách sản phẩm</label>
+                <div class="card">
+                    <div class="card-body">
+                        <ul class="list-group">
+                            @foreach (var item in Model.GioHang)
+                            {
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold">@item.TenTruyen</div>
+                                        <span>@item.Gia.ToString("C0", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"))</span>
+                                    </div>
+                                    <img src="~/Images/@item.HinhAnh" class="img-fluid" style="width: 64px; height: auto;">
+                                </li>
+                                <li>Số lượng: @item.SoLuongMua </li>
+                            }
+                        </ul>
+                        <div class="mt-3">
+                            <p>Phí vận chuyển: <span>Miễn phí</span></p>
+                            <h3>Tổng cộng: <span id="total-price">@Model.GioHang.Sum(x => x.ThanhTien).ToString("C0", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"))</span></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <input type="submit" value="Hoàn tất đơn hàng" class="btn btn-primary" />
+            </div>
+
+            @for (int i = 0; i < Model.GioHang.Count; i++)
+            {
+                @Html.HiddenFor(m => m.GioHang[i].MaTruyen)
+                @Html.HiddenFor(m => m.GioHang[i].Gia)
+                @Html.HiddenFor(m => m.GioHang[i].SoLuongMua)
+                @Html.HiddenFor(m => m.GioHang[i].HinhAnh)
+                @Html.HiddenFor(m => m.GioHang[i].TenTruyen)
+            }
+        </div>
+    }
+
+    <div class="mb-4">
+        @Html.ActionLink("Quay về Giỏ Hàng", "GioHang", "GioHang", null, new { @class = "btn btn-secondary" })
+    </div>
+</div>

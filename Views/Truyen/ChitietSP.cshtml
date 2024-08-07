@@ -1,0 +1,62 @@
+﻿@using COMICSHOP.Models
+@model Truyen
+
+@{
+    ViewBag.Title = "ChitietSP";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="row mt-4">
+    <div class="col-lg-4">
+        <div class="product-image position-relative image-resize">
+            <img class="card-img-top" src="~/Images/@Model.HinhAnh" style="width:400px; height:90%" alt="Product Image">
+        </div>
+    </div>
+
+    <div class="col-lg-8 product-info">
+        <h1 class="product-title">@Model.TenTruyen</h1>
+
+        <div class="product-price">@string.Format("{0:#,0}", @Model.Gia)</div>
+
+        <div class="product-details">
+            <ul>
+                <li>Thể loại: @ViewBag.TheLoai</li>
+            </ul>
+        </div>
+
+        <div class="mt-4">
+            <div class="inline-container">
+                <input type="number" id="productQuantity" value="1" class="form-control input-add-to-cart-container">
+            </div>
+        </div>
+
+        <div class="inline-container mt-4">
+            @if (Session["AccountId"] != null)
+            {
+                <button class="btn btn-danger btn-lg w-100 "
+                        onclick="ThemVaoGioHang('@Model.MaTruyen', '@Model.HinhAnh', '@Model.TenTruyen', @Model.Gia, getProductQuantity(), '@Session["AccountId"]')">
+                    THÊM VÀO GIỎ HÀNG
+                </button>
+            }
+        </div>
+        <div class="inline-container">
+            (Số lượng hiện có: @Model.SoLuong)
+        </div>
+    </div>
+    
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="product-detail-footer">
+            <div class="product-description">
+                <h4>Thông tin sản phẩm</h4>
+                <p><b>Tên truyện:</b> @Model.TenTruyen</p>
+                <p><b>Tác giả:</b> @Model.TacGia</p>
+                <p><b>Ngày xuất bản:</b> @(Model.NgayXuatBan.HasValue ? Model.NgayXuatBan.Value.ToString("dd/MM/yyyy") : "Không có ngày xuất bản")</p>
+                <p><b>Nội dung:</b><br />  @Model.TomTat</p>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Action("SPTT", "Truyen")
+

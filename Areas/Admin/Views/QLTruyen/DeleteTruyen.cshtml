@@ -1,0 +1,41 @@
+﻿@model COMICSHOP.Areas.Admin.Data.TruyenViewModel
+
+@{
+    ViewBag.Title = "DeleteTruyen";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>DeleteTruyen</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TruyenViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenTruyen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenTruyen)
+        </dd>
+
+        <dt>
+            <img src="~/Images/@Model.HinhAnh" height="100" />
+        </dt>
+
+
+    </dl>
+
+    @using (Html.BeginForm("ConfirmDeleteTruyen", "QLTruyen"))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.MaTruyen)
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

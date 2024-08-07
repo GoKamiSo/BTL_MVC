@@ -1,0 +1,66 @@
+﻿@model List<COMICSHOP.Models.ViewModel.GioHang>
+
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+@if (Session["AccountId"] == null)
+{
+<script>
+    window.location.href = '@Url.Action("Login", "TaiKhoan")';
+</script>
+}
+
+<div class="row" style="padding:12px; min-height:600px; height:auto">
+    <div class="col-md-12">
+        <h1>Giỏ hàng</h1>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Thông tin sản phẩm</th>
+                        <th>Đơn giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td><img src="~/Images/@item.HinhAnh" alt="@item.TenTruyen" style=" width: 70px; height: 98px; object-fit: cover;" /></td>
+                            <td>@item.TenTruyen</td>
+                            <td>@item.Gia₫</td>
+                            <td>
+                                <button class="btn btn-decrease" data-id="@item.MaTruyen">-</button>
+                                <span class="quantity">@item.SoLuongMua</span>
+                                <button class="btn btn-increase" data-id="@item.MaTruyen">+</button>
+                            </td>
+                            <td class="thanhtien">@item.ThanhTien₫</td>
+                            <td>
+                                <button class="btn btn-danger btn-xoa" data-id="@item.MaTruyen" onclick="XoaSP(@item.MaTruyen)">
+                                 Xóa
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4" style="text-align:right"><strong>Tổng tiền:</strong></td>
+                        <td class="tongtien"><strong>@Model.Sum(x => x.ThanhTien)₫</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-md-6 pull-right" style="display: flex; justify-content: flex-end;">
+                <a href="@Url.Action("Index", "Thanhtoan")" class="btn btn-success btn-block" style="width:20%;padding:8px;">Thanh toán</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+

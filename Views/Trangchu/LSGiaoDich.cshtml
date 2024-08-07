@@ -1,0 +1,64 @@
+﻿@model IEnumerable<COMICSHOP.Models.ViewModel.ChiTietDonHangViewModel>
+
+@{
+    ViewBag.Title = "LSGiaoDich";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+@if (Session["AccountId"] == null)
+{
+    <script>
+    window.location.href = '@Url.Action("Login", "TaiKhoan")';
+    </script>
+}
+
+<h4 class="mb-0 mb-4 mt-4">Đơn hàng của tôi:</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Hình ảnh</th>
+            <th>Tên hàng</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Tổng tiền</th>
+            <th>Ngày đặt</th>
+            <th>Trạng thái</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><img src="~/Images/@item.HinhAnh" class="card-img-top" style="width: 50px; height:70px"></td>
+                <td>@item.TenTruyen</td>
+                <td>@item.Gia</td>
+                <td>@item.SoLuong</td>
+                <td>@string.Format("{0:#,0}", @item.ThanhTien)<span id="temp-total">₫</span></td>
+                <td>@item.NgayDat</td>
+                <td>
+                    @if (item.TrangThai == 0)
+                    {
+                        <span class="badge bg-dark">Chờ xác nhận</span>
+                    }
+                    else if (item.TrangThai == 1)
+                    {
+                        <span class="badge bg-primary">Đã xác nhận</span>
+                    }
+                    else if (item.TrangThai == 2)
+                    {
+                        <span class="badge bg-primary">Hàng đang chuẩn bị</span>
+                    }
+                    else if (item.TrangThai == 3)
+                    {
+                        <span class="badge bg-primary">Đang giao hàng</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success">Giao hàng thành công</span>
+                    }
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

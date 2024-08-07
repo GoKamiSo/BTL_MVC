@@ -1,0 +1,122 @@
+﻿@model COMICSHOP.Areas.Admin.Data.DashboardViewModel
+@using PagedList.Mvc;
+@using PagedList;
+
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@if (Session["Fullname"] == null)
+{
+    <script>
+    window.location.href = '@Url.Action("Login", "QLAccount")';
+    </script>
+}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h5 class="card-title">Tổng số truyện tồn kho</h5>
+                    <p class="card-text">@Model.TotalComicsInStock</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card text-white bg-success">
+                <div class="card-body">
+                    <h5 class="card-title">Tổng tiền trong tuần</h5>
+                    <p class="card-text">@string.Format("{0:#,0}", @Model.TotalRevenueThisWeek)₫</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card text-white bg-danger">
+                <div class="card-body">
+                    <h5 class="card-title">Số đơn hàng hôm nay</h5>
+                    <p class="card-text">@Model.OrdersToday</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-warning text-dark">
+                    <h5 class="card-title">Truyện hết hàng</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        @foreach (var comic in Model.OutOfStockComics)
+                        {
+                            <li class="list-group-item">
+                                @*@comic.Id*@
+                            Truyện: @comic.Name
+                            <p>@Html.ActionLink("Edit", "EditTruyen","QLTruyen", new { id = @comic.Id }, new { @class = "btn btn-sm btn-warning" })</p>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-info text-dark">
+                    <h5 class="card-title">Đơn hàng chưa hoàn thành</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Mã đơn hàng</th>
+                                    <th>Ngày đặt</th>
+                                    <th>Tổng tiền</th>
+                                    <th>Trạng thái</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var order in Model.IncompleteOrders)
+                                {
+                                    <tr>
+                                        <td>@order.OrderDate.ToShortDateString()</td>
+                                        <td>@order.TotalPrice</td>
+                                        <td>
+                                            @if (order.Status == 0)
+                                            {
+                                                <span class="badge bg-dark">Chờ xác nhận</span>
+                                            }
+                                            else if (order.Status == 1)
+                                            {
+                                                <span class="badge bg-primary">Đã xác nhận</span>
+                                            }
+                                            else if (order.Status == 2)
+                                            {
+                                                <span class="badge bg-warning text-dark">Hàng đang chuẩn bị</span>
+                                            }
+                                            else if (order.Status == 3)
+                                            {
+                                                <span class="badge bg-info">Đang giao hàng</span>
+                                            }
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Chi tiết", "ChiTietDonHang","QLDonHang", new { id = order.Id }, new { @class = "btn btn-info btn-sm" })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <div class="d-flex justify-content-center">
+                            @Html.PagedListPager(Model.IncompleteOrders, page => Url.Action("Index", new { page }))
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

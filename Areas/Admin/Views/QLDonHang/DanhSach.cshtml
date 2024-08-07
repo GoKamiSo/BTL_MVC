@@ -1,0 +1,73 @@
+﻿@model IPagedList<COMICSHOP.Areas.Admin.Data.DonHangDisplayVM>
+@using PagedList.Mvc;
+@using PagedList;
+@{
+    ViewBag.Title = "DanhSach";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@if (Session["Fullname"] == null)
+{
+    <script>
+        window.location.href = '@Url.Action("Login", "QLAccount")';
+    </script>
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Danh Sách Đơn Hàng</h2>
+    </div>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.First().TenKhach)</th>
+                <th>@Html.DisplayNameFor(model => model.First().SoDienThoai)</th>
+                <th>@Html.DisplayNameFor(model => model.First().NgayDat)</th>
+                <th>@Html.DisplayNameFor(model => model.First().DiaChi)</th>
+                <th>@Html.DisplayNameFor(model => model.First().TrangThai)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.TenKhach)</td>
+                    <td>@Html.DisplayFor(modelItem => item.SoDienThoai)</td>
+                    <td>@Html.DisplayFor(modelItem => item.NgayDat)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DiaChi)</td>
+                    <td>
+                        @if (item.TrangThai == 0)
+                        {
+                            <span class="badge bg-dark">Chờ xác nhận</span>
+                        }
+                        else if (item.TrangThai == 1)
+                        {
+                            <span class="badge bg-primary">Đã xác nhận</span>
+                        }
+                        else if (item.TrangThai == 2)
+                        {
+                            <span class="badge bg-warning text-dark">Hàng đang chuẩn bị</span>
+                        }
+                        else if (item.TrangThai == 3)
+                        {
+                            <span class="badge bg-info">Đang giao hàng</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-success">Giao hàng thành công</span>
+                        }
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "ChiTietDonHang", new { id = item.IdDonHang }, new { @class = "btn btn-info btn-sm" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="d-flex justify-content-center">
+        @Html.PagedListPager(Model, page => Url.Action("DanhSach", new { page }), PagedListRenderOptions.Classic)
+    </div>
+</div>

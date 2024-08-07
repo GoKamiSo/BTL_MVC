@@ -1,0 +1,62 @@
+﻿@model IPagedList<COMICSHOP.Areas.Admin.Data.TruyenDisplayVM>
+@using PagedList.Mvc
+@using PagedList
+@{
+    ViewBag.Title = "DanhSach";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@if (Session["Fullname"] == null)
+{
+    <script>
+        window.location.href = '@Url.Action("Login", "QLAccount")';
+    </script>
+}
+
+<h2 class="my-4">Danh Sách Truyện</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+</p>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-info">
+        @TempData["Message"]
+    </div>
+}
+
+<table class="table table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.First().TenTruyen)</th>
+            <th>@Html.DisplayNameFor(model => model.First().AnhBia)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Gia)</th>
+            <th>@Html.DisplayNameFor(model => model.First().NgayXuatBan)</th>
+            <th>@Html.DisplayNameFor(model => model.First().SoLuong)</th>
+            <th>@Html.DisplayNameFor(model => model.First().TenTheLoai)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.TenTruyen)</td>
+                <td><img src="~/Images/@item.AnhBia" height="100" /></td>
+                <td>@Html.DisplayFor(modelItem => item.Gia)<span>đ</span></td>
+                <td>@Html.DisplayFor(modelItem => item.NgayXuatBan)</td>
+                <td>@Html.DisplayFor(modelItem => item.SoLuong)</td>
+                <td>@Html.DisplayFor(modelItem => item.TenTheLoai)</td>
+                <td>
+                    @Html.ActionLink("Edit", "EditTruyen", new { id = item.MaTruyen }, new { @class = "btn btn-sm btn-warning" }) |
+                    @Html.ActionLink("Delete", "DeleteTruyen", new { id = item.MaTruyen }, new { @class = "btn btn-sm btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="d-flex justify-content-center">
+    @Html.PagedListPager(Model, page => Url.Action("DanhSach", new { page }))
+</div>

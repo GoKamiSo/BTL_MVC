@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/AdminCss/AdminStyles.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/23a6c4cfe8.js" crossorigin="anonymous"></script>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="@Url.Action("Index","Dashboard")">
+                                <span data-feather="home"></span>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("DanhSach","QLTruyen")">
+                                <span data-feather="file"></span>
+                                Truyện
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("DanhSach","QLDonHang")">
+                                <span data-feather="shopping-cart"></span>
+                                Đơn hàng
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("DanhSachAcc","QLAccount")">
+                                <span data-feather="users"></span>
+                                Tài khoản
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("DanhSach","TheLoai")">
+                                <span data-feather="layers"></span>
+                                Thể loại
+                            </a>
+                        </li>
+
+                        @if (Session["Fullname"] != null && Session["Role"].ToString() == "Admin")
+                        {
+                           <li class="nav-item">
+                               <a class="nav-link" href="@Url.Action("Logout","QLAccount")">
+                                   <span data-feather="log-out"></span>
+                                   Đăng xuất
+                               </a>
+                           </li>
+                        }
+                        
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                       
+                        <div class="btn-group me-2">
+                            @*<button type="button" class="btn btn-sm btn-outline-secondary">Chia sẻ</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Xuất</button>*@
+                            @if (Session["Fullname"] != null && Session["Role"].ToString() == "Admin")
+                            {
+                                @Session["Fullname"]
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content here -->
+                <div>
+                    @RenderBody()
+                    @RenderSection("scripts", required: false)
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.7.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Areas/Admin/Js/script.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        feather.replace()
+    </script>
+</body>
+</html>

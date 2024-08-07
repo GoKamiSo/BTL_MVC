@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/23a6c4cfe8.js" crossorigin="anonymous"></script>
+    <link href="~/Css/Styles.css" rel="stylesheet" />
+    <style>
+        .hidden-form {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+            .hidden-form form {
+                display: flex;
+                flex-direction: column;
+            }
+
+        .form-link {
+            display: block;
+            padding: 10px;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px solid #ddd;
+        }
+
+            .form-link:hover {
+                background-color: #e9ecef;
+                text-decoration: none;
+            }
+
+            .form-link:last-child {
+                border-bottom: none;
+            }
+    </style>
+</head>
+<body>
+    <div class="container-xxl bg-white">
+        <nav class="navbar navbar-expand-lg bg-dark">
+            <div class="container">
+                <div class="w-100 d-flex justify-content-between">
+                    <div>
+                        <i class="fa-solid fa-envelope text-light contact-info"></i>
+                        <a href="" class="navbar-sm-brand text-light text-decoration-none contact-infor">phantansy132109@gmail.com</a>
+                        <i class="fa-solid fa-phone text-light contact-info"></i>
+                        <a href="" class="navbar-sm-brand text-light text-decoration-none contact-infor">0769-942-216</a>
+                    </div>
+                    <div>
+                        <a href="https://www.facebook.com/" class="text-white">
+                            <i class="fa-brands fa-facebook me-2"></i>
+                        </a>
+                        <a href="" class="text-white">
+                            <i class="fa-brands fa-instagram me-2"></i>
+                        </a>
+                        <a href="" class="text-white">
+                            <i class="fa-brands fa-twitter me-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container d-flex justify-content-between">
+                <div class="d-flex align-items-center">
+                    <a href="@Url.Action("Index","Trangchu")">
+                        <img src="~/Images/Logo.png" alt="Logo" class="logo me-1" />
+                    </a>
+                    <a class="text-decoration-none text-black" href="@Url.Action("Index","Trangchu")">
+                        <h2 class="title mb-0">Shop Truyện</h2>
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-1 mb-lg-0">
+                    </ul>
+                    <div style="width:200px">
+                        <div class="d-flex align-items-center position-relative">
+                            <a href="@Url.Action("GioHang","GioHang")" class="text-decoration-none text-dark me-2">
+                                <i class="fa-solid fa-cart-shopping nav-icon"></i>
+                            </a>
+                            <span class="text-decoration-none text-dark d-flex align-items-center" id="login-icon">
+                                <i class="fa-solid fa-user nav-icon me-2"></i>
+                                <span class="mb-0" style="font-size:14px">
+                                    @if (Session["AccountId"] != null)
+                                    {
+                                        @Session["Fullname"]
+                                    }
+                                    else
+                                    {
+                                        <a href="@Url.Action("Login", "TaiKhoan")" class="form-link text-dark">
+                                            Đăng nhập
+                                        </a>
+                                    }
+                                </span>
+                            </span>
+
+                            <div id="user-form" class="hidden-form">
+                                <form>
+                                    @if (Session["AccountId"] != null)
+                                    {
+                                        <a href="@Url.Action("LSGiaoDich", "Trangchu")" class="form-link text-dark">Đơn hàng của tôi</a>
+                                        <a href="@Url.Action("Logout", "TaiKhoan")" class="form-link text-dark">Đăng xuất</a>
+                                    }
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        @RenderBody()
+    </div>
+    <script>
+        document.getElementById('login-icon').addEventListener('click', function (event) {
+            if (event.target.tagName === 'A') {
+                return;
+            }
+
+            event.preventDefault();
+            var form = document.getElementById('user-form');
+            if (form.style.display === 'none' || form.style.display === '') {
+                form.style.display = 'block';
+            } else {
+                form.style.display = 'none';
+            }
+        });
+    </script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.7.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Js/Script.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

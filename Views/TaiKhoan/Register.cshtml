@@ -1,0 +1,59 @@
+﻿@model COMICSHOP.Models.TaiKhoan
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="mt-0" style="background-image:url(../../Images/bgcontent.jpg)">
+
+    @using (Html.BeginForm("Register", "TaiKhoan", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="container w-50 mt-xl-1 p-4" style="min-height: 540px; height: auto;">
+            <div>
+                <h4 class="mb-0 mt-4">Đăng ký</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="mb-3 row">
+                    @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "col-sm-3 col-form-label" })
+                    <div class="col">
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "col-sm-3 col-form-label" })
+                    <div class="col">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    @Html.LabelFor(model => model.Fullname, htmlAttributes: new { @class = "col-sm-3 col-form-label" })
+                    <div class="col">
+                        @Html.EditorFor(model => model.Fullname, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Fullname, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    @Html.LabelFor(model => model.Sdt, htmlAttributes: new { @class = "col-sm-3 col-form-label" })
+                    <div class="col">
+                        @Html.EditorFor(model => model.Sdt, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Sdt, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <div class="col-sm-4 offset-sm-3">
+                        <input type="submit" value="Đăng ký" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
